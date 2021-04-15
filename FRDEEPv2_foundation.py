@@ -18,74 +18,14 @@ import torch.utils.data as data
 from torchvision.datasets.utils import download_url, check_integrity
 import md5_batch_gen
 import torch
-#-------------------------------------------------
-#-------------------------------------------------
-# Dataset foundation
-#-------------------------------------------------
-upper_dir = '/Users/tanghongming/Desktop/PhD/FRDEEP_v2.0/4_DataPickle_Generation/'
-# GRGNOM-N data 1
-base_folder_NVSS = 'NVSS'
-url_NVSS = "https://drive.google.com/file/d/1yjMxY4PfXlD5GL-DCZH7dfhsiOSLbKXr/view?usp=sharing" #(require modification)
-filename_NVSS = "NVSS.tar.gz"
-# md5 code for the zipped file.
-nvss_tgz_dir = upper_dir + filename_NVSS
-tgz_md5_NVSS = md5_batch_gen.md5_gen(nvss_tgz_dir)
-# md5 code for the train/test/meta files
-meta, data_batches, test_batch = md5_batch_gen.md5_data_batch_gen(upper_dir+base_folder_NVSS)
-train_list_NVSS = data_batches
-test_list_NVSS = [
-                  test_batch,
-                  ]
-meta_NVSS = {'filename': 'batches.meta',
-             'key': 'label_names',
-             'md5': meta[1],
-            }
-#-------------------------------------------------
-# GRGNOM-F data 2
-base_folder_FIRST = 'FIRST'
-url_FIRST = "https://drive.google.com/file/d/1yjMxY4PfXlD5GL-DCZH7dfhsiOSLbKXr/view?usp=sharing" #(require modification)
-filename_FIRST = "FIRST.tar.gz"
-# md5 code for the zipped file.
-first_tgz_dir = upper_dir + filename_FIRST
-tgz_md5_FIRST = md5_batch_gen.md5_gen(first_tgz_dir)
-# md5 code for the train/test/meta files
-meta, data_batches, test_batch = md5_batch_gen.md5_data_batch_gen(upper_dir+base_folder_FIRST)
-train_list_FIRST = data_batches
-test_list_FIRST = [
-                   test_batch,
-                   ]
-meta_FIRST = {'filename': 'batches.meta',
-              'key': 'label_names',
-              'md5': meta[1],
-             }
-#-------------------------------------------------
 
-
-#-------------------------------------------------
-# Source las data 3
-base_folder_id = 'object_id'
-# redshift information of each batch.
-train_list_id = [
-                       'train_batch.npy',
-                       ]
-test_list_id = [
-                      'test_batch.npy',
-                      ]
-#-------------------------------------------------
-#-------------------------------------------------
-# Integrated data class
 class FRDEEPv2(data.Dataset):
     """ FRDEEP v2.0 dataset
 
         Inspired by `HTRU1 <https://as595.github.io/HTRU1/>`_ Dataset.
 
         Args:
-        root1 (string): Root directory of GRGNOM-N dataset where directory
-        ``NVSS_data`` exists or will be saved to if download is set to True.
-        root2 (string): Root directory of GRGNOM-F dataset where directory
-        ``FIRST_data`` exists or will be saved to if download is set to True.
-        root3 (string): Root directory of source object id where directory
-        ``object_id`` exists or will be saved to if download is set to True.
+        root (string): Root directory of FRDEEP v2.0 dataset where upper directory of all data exists or will be saved to if download is set to True.
         train (bool, optional): If True, creates dataset from training set, otherwise
         creates from test set.
         transform (callable, optional): A function/transform that takes in an PIL image
@@ -96,57 +36,75 @@ class FRDEEPv2(data.Dataset):
         puts it in root directory. If dataset is already downloaded, it is not
         downloaded again.
 
-        """
-    # NVSS dataset
-    base_folder1 = base_folder_NVSS
-    url_1 = url_NVSS
-    filename_1 = filename_NVSS
-    tgz_md5_1 = tgz_md5_NVSS
-    train_list_1 = train_list_NVSS
-    test_list_1 = test_list_NVSS
-    meta1 = meta_NVSS
+    """
+    #------Before all, url address to download the dataset saved in a github url------
+    # Url to download dataset if not under current directory.
+    url = "http://www.jb.man.ac.uk/research/FRDEEP/FRDEEPv2.tar.gz" #(require modification)
+    #---------------------------------------------------------------------------------
 
-    # FIRST dataset
-    base_folder2 = base_folder_FIRST
-    url_2 = url_FIRST
-    filename_2 = filename_FIRST
-    tgz_md5_2 = tgz_md5_FIRST
-    train_list_2 = train_list_FIRST
-    test_list_2 = test_list_FIRST
-    meta2 = meta_FIRST
+    #--------------- Data dictionary setup ----------------------------------------------------------  
+    # Full .tar.gz dataset file
+    filename = 'FRDEEPv2.tar.gz'
+    tgz_md5 = '45bad6ed4e96ee4685306c013b0953f9'
+    
+    # FRDEEP-N.tar.gz
+    filename_1 = "NVSS.tar.gz"
+    tgz_md5_1 = '3b6632b869370e0c678ab69dfe43d4c5'
+    
+    # FRDEEP-F.tar.gz
+    filename_2 = "FIRST.tar.gz"
+    tgz_md5_2 = 'c57d884b8daba9aa5bbce8f383594291'
+    
+    
+    base_folder1 = 'NVSS'
+    train_list_1 = [['train_batch', 'a7bd9f5f3f27f395f51e424a89e48db9'],]
+    test_list_1 =  [['test_batch', '9a46e93a9932f986efc94fddc7de0164'],]
+    meta1 = {'filename': 'batches.meta',
+             'key': 'label_names',
+             'md5': 'a8bb67d1caf2d0ca9fa501b337e39ea6',}
 
+
+    base_folder2 = 'FIRST'
+    train_list_2 = [['train_batch', '234b66460e95834c78cee7c7a73ed916'],]
+    test_list_2 = [['test_batch', 'acb0277e9feb983ff8fa79c31c4b395a'],]
+    meta2 = {'filename': 'batches.meta',
+              'key': 'label_names',
+              'md5':'a8bb67d1caf2d0ca9fa501b337e39ea6',}
     # Source object id
-    base_folder3 = base_folder_id
-    train_list_3 = train_list_id
-    test_list_3 = test_list_id
-
-    def __init__(self, root1, root2, root3,train=True,
+    train_list_id = [
+                       'train_batch.npy',]
+    test_list_id = [
+                      'test_batch.npy',] 
+    base_folder3 = 'object_id'
+    
+    
+    def __init__(self, root,train=True,
                  transform=None, target_transform=None,
                  download=False):
-
-        self.root1 = os.path.expanduser(root1)
-        self.root2 = os.path.expanduser(root2)
-        self.root3 = os.path.expanduser(root3)
+        #--------------- Dataset general setup Begin ---------------------------------------------------        
+        self.root = os.path.expanduser(root)
 
         self.transform = transform
         self.target_transform = target_transform
         self.train = train  # training set or test set
-
+            
         if download:
             self.download()
 
         if not self._check_integrity():
             raise RuntimeError('Dataset not found or corrupted.' +
                                ' You can use download=True to download it')
+        #--------------- Dataset general setup Ends ----------------------------------------------------
+        
 
         if self.train:
             downloaded_list_1 = self.train_list_1
             downloaded_list_2 = self.train_list_2
-            downloaded_list_3 = self.train_list_3
+            downloaded_list_3 = self.train_list_id
         else:
             downloaded_list_1 = self.test_list_1
             downloaded_list_2 = self.test_list_2
-            downloaded_list_3 = self.test_list_3
+            downloaded_list_3 = self.test_list_id
 
         self.data1 = []
         self.data2 = []
@@ -156,7 +114,7 @@ class FRDEEPv2(data.Dataset):
 
         # now load the picked numpy arrays of data 1
         for file_name, checksum in downloaded_list_1:
-            file_path = os.path.join(self.root1, self.base_folder1, file_name)
+            file_path = os.path.join(self.root, self.base_folder1, file_name)
 
             with open(file_path, 'rb') as f:
                 if sys.version_info[0] == 2:
@@ -173,13 +131,13 @@ class FRDEEPv2(data.Dataset):
 
         self.data1 = np.vstack(self.data1).reshape(-1, 1, 150, 150)
         self.data1 = self.data1.transpose((0, 2, 3, 1))
-        print(np.shape(self.data1))
+        print('NVSS data sample shape:',np.shape(self.data1))
 
         self.filename1 = np.vstack(self.filename1).reshape(-1, 1, 1)
 
         # now load the picked numpy arrays of data 2
         for file_name, checksum in downloaded_list_2:
-            file_path = os.path.join(self.root2, self.base_folder2, file_name)
+            file_path = os.path.join(self.root, self.base_folder2, file_name)
 
             with open(file_path, 'rb') as f:
                 if sys.version_info[0] == 2:
@@ -195,7 +153,7 @@ class FRDEEPv2(data.Dataset):
 
         self.data2 = np.vstack(self.data2).reshape(-1, 1, 150, 150)
         self.data2 = self.data2.transpose((0, 2, 3, 1))
-        print(np.shape(self.data2))
+        print("FIRST data sample shape:",np.shape(self.data2))
 
         # Function to decode object id
         def batch_str_tensor_decode(tensor):
@@ -205,7 +163,7 @@ class FRDEEPv2(data.Dataset):
         
         # now load the numpy arrays of data 3
         for file_name in downloaded_list_3:
-            file_path = os.path.join(self.root3, self.base_folder3, file_name)
+            file_path = os.path.join(self.root, self.base_folder3, file_name)
 
             self.data3.extend(np.load(file_path))
             if 'labels' in entry:
@@ -219,7 +177,7 @@ class FRDEEPv2(data.Dataset):
         self._load_meta()
 
     def _load_meta(self):
-        path = os.path.join(self.root1, self.base_folder1, self.meta1['filename'])
+        path = os.path.join(self.root, self.base_folder1, self.meta1['filename'])
         if not check_integrity(path, self.meta1['md5']):
             raise RuntimeError('Dataset metadata file not found or corrupted.' +
                                ' You can use download=True to download it')
@@ -268,12 +226,27 @@ class FRDEEPv2(data.Dataset):
         return len(self.data1)
 
     def _check_integrity(self):
-        root1 = self.root1
-        for fentry in (self.train_list_1 + self.test_list_1):
-            filename, md5 = fentry[0], fentry[1]
-            fpath = os.path.join(root1, self.base_folder1, filename)
-            if not check_integrity(fpath, md5):
-                return False
+        root = self.root
+        # Check if anyfile exist
+        import os
+        dir_list = os.listdir(root)
+        if "NVSS" not in dir_list or "FIRST" not in dir_list:
+            print("NVSS and FIRST folder not found under given root directory:(.")
+            return False
+        else:
+            
+            # NVSS inputs
+            for fentry in (self.train_list_1 + self.test_list_1):
+                filename, md5 = fentry[0], fentry[1]
+                fpath = os.path.join(root, "NVSS", filename)
+                if not check_integrity(fpath, md5):
+                    return False
+            # FIRST inputs
+            for fentry in (self.train_list_2 + self.test_list_2):
+                filename, md5 = fentry[0], fentry[1]
+                fpath = os.path.join(root, "FIRST", filename)
+                if not check_integrity(fpath, md5):
+                    return False
         return True
 
     def download(self):
@@ -281,18 +254,18 @@ class FRDEEPv2(data.Dataset):
 
         if self._check_integrity():
             print('Files already downloaded and verified')
-            return
+        else:
+            download_url(self.url, self.root, self.filename, self.tgz_md5)
 
         # extract file
-        with tarfile.open(os.path.join(self.root1, self.filename_1), "r:gz") as tar:
-            tar.extractall(path=self.root1)
+        tarfile.open(os.path.join(self.root, self.filename), "r:gz").extractall(path=self.root)
 
     def __repr__(self):
         fmt_str = 'Dataset ' + self.__class__.__name__ + '\n'
         fmt_str += '    Number of datapoints: {}\n'.format(self.__len__())
         tmp = 'train' if self.train is True else 'test'
         fmt_str += '    Split: {}\n'.format(tmp)
-        fmt_str += '    Root1 Location: {}\n'.format(self.root1)
+        fmt_str += '    Root Location: {}\n'.format(self.root)
         tmp = '    Transforms (if any): '
         fmt_str += '{0}{1}\n'.format(tmp, self.transform.__repr__().replace('\n', '\n' + ' ' * len(tmp)))
         tmp = '    Target Transforms (if any): '
