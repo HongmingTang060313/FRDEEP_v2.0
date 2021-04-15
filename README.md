@@ -2,6 +2,12 @@
 
 This is the README file of FRDEEP v2.0, which is yet to be finished.
 
+# Necessary Packages 
+
+1. Pytorch (ver. used: 1.0.1.post2)
+2. hashlib
+3. pickle
+
 ## Updates:
 
 1. Data object ID now have full traceability, user can print out the object ID of each sample image immediately when using dataset for training/testing/data visualization.
