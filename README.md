@@ -19,8 +19,8 @@ We would also be grateful if you are happy to cite the same paper when using our
 1. Data sample size have enlarged from 600 objects to 658 objects
 2. Data object ID now have full traceability, user can print out the object ID of each sample image immediately when using dataset for training/testing/data visualization.
 3. Training batches are now merged into one. The dataset comprises only 1 training batch data and 1 testing batch data.
-4. FRDEEP-N and FRDEEP-F are integrated as one, user could train/test only with NVSS, FIRST images, or both.
-5. A step-by-step dataset foundation pipeline are now open to access (yeah!)
+4. FRDEEP-N and FRDEEP-F in the FRDEEP v1 are now integrated as one, user could train/test with only NVSS, FIRST images, or both.
+5. A step-by-step dataset foundation pipeline tutorial are now open to access! Please check out the tutorial (with 5 scripts, from Step 1 to 5).
 
 ## The FR-DEEP v2 Batched Dataset
 
