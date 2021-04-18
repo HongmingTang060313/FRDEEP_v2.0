@@ -48,7 +48,7 @@ FR II: ![a](/4_DataPickle_Generation/FIRST_IMG/1408+0050_II.png) ![b](/4_DataPic
 
 ## Using the Dataset in PyTorch
 
-The [FRDEEPv2_foundation.py] file contains an instance of the [torchvision Dataset()](https://pytorch.org/docs/stable/torchvision/datasets.html) for the FRDEEP v2, and FRDEEPv2_tutorial.ipynb provides you a quick example of loading FRDEEP v2 and use it for simple CNN model training/testing.
+The FRDEEPv2_foundation.py file contains an instance of the [torchvision Dataset()](https://pytorch.org/docs/stable/torchvision/datasets.html) for the FRDEEP v2, and FRDEEPv2_tutorial.ipynb provides you a quick example of loading FRDEEP v2 and use it for simple CNN model training/testing.
 
 To use it with PyTorch in Python, first import the torchvision datasets and transforms libraries like:
 
