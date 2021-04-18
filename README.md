@@ -30,7 +30,7 @@ The angular size of the pixels for NVSS images: 15''/pixel; FIRST: 1.8''/pixel. 
 
 There are 460 training images, and 198 test images. It is inspired by [CIFAR-10 Dataset](http://www.cs.toronto.edu/~kriz/cifar.html) and [HTRU1 Dataset](https://as595.github.io/HTRU1/).
 
-The dataset is divided into 1 training batch and 1 test batch. In total the dataset contains 268 FR I objects and 390 FR II objects. Notably, In [(1)](#paper) we mentioned there ar 659 primary samples, whil we lately found that sample 4C 20.29a and 4C 20.29b are two FR II objects wit the same image centre. We therefore only retain one of the two sample image in this version.
+The dataset is divided into 1 training batch and 1 test batch. In total, the dataset contains 268 FR I objects and 390 FR II objects. Notably, In [(1)](#paper) we mentioned there ar 659 primary samples, whil we lately found that sample 4C 20.29a and 4C 20.29b are two FR II objects wit the same image centre. We therefore only retain one of the two sample image in this version, which gives 658 samples in total.
 
 This is an *imbalanced dataset*
 
@@ -72,7 +72,7 @@ transform = transforms.Compose(
      transforms.Normalize([0.5],[0.5])])
  ```
 
-Read the FRDEEP dataset from the data saving directory (if you the directory didn't contains FRDEEPv2 data, please set download=True to download the dataset to the specified directory):
+Read the FRDEEP v2 dataset from the data saving directory (if your customized directory didn't contains FRDEEPv2 data, please set download=True to download the dataset to the directory):
 
 ```python
 # choose the training and test datasets
