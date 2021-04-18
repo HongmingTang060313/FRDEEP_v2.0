@@ -30,7 +30,7 @@ The angular size of the pixels for NVSS images: 15''/pixel; FIRST: 1.8''/pixel. 
 
 There are 460 training images, and 198 test images. It is inspired by [CIFAR-10 Dataset](http://www.cs.toronto.edu/~kriz/cifar.html) and [HTRU1 Dataset](https://as595.github.io/HTRU1/).
 
-The dataset is divided into 1 training batch and 1 test batch. In total, the dataset contains 268 FR I objects and 390 FR II objects. Notably, In [(1)](#paper) we mentioned there ar 659 primary samples, while we lately found that sample 4C 20.29a and 4C 20.29b are two FR II objects wit the same image centre. We therefore only retain one of the two sample image in this version, which gives 658 samples in total.
+The dataset is divided into 1 training batch and 1 test batch. In total, the dataset contains 268 FR I objects and 390 FR II objects. Notably, In [(1)](#paper) we mentioned there ar 659 primary samples, while we lately found that sample 4C 20.29a and 4C 20.29b are two FR I objects with the same recorded image central location. We therefore only retain one of the two sample image in this version, which gives 658 samples in total.
 
 This is an *imbalanced dataset*
 
