@@ -76,7 +76,7 @@ Read the FRDEEP v2 dataset from the data saving directory (if your customized di
 
 ```python
 # choose the training and test datasets
-trainset = FRDEEPv2(root="This is the directory saving FRDEEP v2 data", train=True, download=Fale, transform=transform)
+trainset = FRDEEPv2(root="This is the directory saving FRDEEP v2 data", train=True, download=False, transform=transform)
 testset = FRDEEPv2(root="This is the directory saving FRDEEP v2 data", train=False, download=False, transform=transform)
 ```
 
