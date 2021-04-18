@@ -4,7 +4,7 @@ The **FR-DEEP v2 Batched Dataset** is a upgrated version of FR-DEEP v1, a datase
 
 [(1)](#paper) *Transfer learning for radio galaxy classification*, Tang H., Scaife A. M. M., Leahy J. P., 2019, MNRAS, 488, 3358. doi:10.1093/mnras/stz1883 (or https://arxiv.org/abs/1903.11921)  
 
-We would also be grateful if you ar happy to cite the same paper when using our dataset foundation tutorial as the basis of your own dataset foundation pipeline:)
+We would also be grateful if you are happy to cite the same paper when using our step-by-step dataset foundation tutorial as the basis of your own dataset foundation pipeline:)
 
 # Necessary Packages 
 
