@@ -43,3 +43,42 @@ FIRST set images, on the other hand, look like:
 FR I: ![a](/4_DataPickle_Generation/FIRST_IMG/1433-0239_I.png) ![b](/4_DataPickle_Generation/FIRST_IMG/1434+0158_I.png) ![c](/4_DataPickle_Generation/FIRST_IMG/1435-0268_I.png) ![d](/4_DataPickle_Generation/FIRST_IMG/1437-0025_I.png)
 
 FR II: ![a](/4_DataPickle_Generation/FIRST_IMG/1408+0050_II.png) ![b](/4_DataPickle_Generation/FIRST_IMG/1408+0281_II.png) ![c](/4_DataPickle_Generation/FIRST_IMG/1409-0307_II.png) ![d](/4_DataPickle_Generation/FIRST_IMG/1412-0075_II.png)
+
+## Using the Dataset in PyTorch
+
+The [FRDEEPv2_foundation.py] file contains an instance of the [torchvision Dataset()](https://pytorch.org/docs/stable/torchvision/datasets.html) for the FRDEEP v2, and FRDEEPv2_tutorial.ipynb provides you a quick example of loading FRDEEP v2 and use it for simple CNN model training/testing.
+
+To use it with PyTorch in Python, first import the torchvision datasets and transforms libraries like:
+
+```python
+from torchvision import datasets
+import torchvision.transforms as transforms
+```
+
+Then import the FRDEEP v2:
+
+```python
+from FRDEEPv2_foundation import FRDEEPv2
+```
+
+Define the transform (you can always perform other transform operation here):
+
+```python
+# convert data to a normalized torch.FloatTensor
+transform = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalize([0.5],[0.5])])
+ ```
+
+Read the FRDEEP dataset from the data saving directory (if you the directory didn't contains FRDEEPv2 data, please set download=True to download the dataset to the specified directory):
+
+```python
+# choose the training and test datasets
+trainset = FRDEEPv2(root="This is the directory saving FRDEEP v2 data", train=True, download=Fale, transform=transform)
+testset = FRDEEPv2(root="This is the directory saving FRDEEP v2 data", train=False, download=False, transform=transform)
+```
+
+ 
+### Jupyter Notebooks
+
+As said, an example of classification using the FIRST images in FRDEEP v2 via PyTorch is provided as a Jupyter notebook names FRDEEPv2_tutorial.ipynb. These are examples for demonstration only. If you use them for science directly, we too would be appreciated if
