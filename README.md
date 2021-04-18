@@ -11,6 +11,8 @@ We would also be grateful if you are happy to cite the same paper when using our
 1. Pytorch (ver. used: 1.0.1.post2)
 2. hashlib
 3. pickle
+4. Numpy
+5. Astroquery
 
 ## Updates:
 
