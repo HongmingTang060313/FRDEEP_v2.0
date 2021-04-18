@@ -72,7 +72,7 @@ transform = transforms.Compose(
      transforms.Normalize([0.5],[0.5])])
  ```
 
-Read the FRDEEP v2 dataset from the data saving directory (if your customized directory didn't contains FRDEEPv2 data, please set download=True to download the dataset to the directory):
+Read the FRDEEP v2 dataset from the data saving directory (if your customized directory didn't contains FRDEEPv2 data files, please set download=True to download the dataset to the directory):
 
 ```python
 # choose the training and test datasets
