@@ -83,4 +83,4 @@ testset = FRDEEPv2(root="This is the directory saving FRDEEP v2 data", train=Fal
  
 ### Jupyter Notebooks
 
-As said, an example of classification using the FIRST images in FRDEEP v2 via PyTorch is provided as a Jupyter notebook names FRDEEPv2_tutorial.ipynb. These are examples for demonstration only. If you use them for science directly, we too would be appreciated if you could cite [(1)](#paper).
+As said, an example of classification using the FIRST images in FRDEEP v2 via PyTorch is provided as a Jupyter notebook names FRDEEPv2_tutorial.ipynb. These are examples for demonstration only. If you use them for science directly, we too would be appreciated if you could cite [(1)](#paper). For contact and collaboration, please contact hongming.tang@manchester.ac.uk
