@@ -42,9 +42,9 @@ FR II: ![a](/4_DataPickle_Generation/NVSS_IMG/1408+0050_II.png) ![b](/4_DataPick
 
 FIRST set images, on the other hand, look like:
 
-FR I: ![a](/4_DataPickle_Generation/FIRST_IMG/1433-0239_I.png) ![b](/4_DataPickle_Generation/FIRST_IMG/1434+0158_I.png) ![c](/4_DataPickle_Generation/FIRST_IMG/1435-0268_I.png) ![d](/4_DataPickle_Generation/FIRST_IMG/1437-0025_I.png)
+FR I: ![a](/4_DataPickle_Generation/FIRST_IMG/1433-0239_I.png) ![b](/4_DataPickle_Generation/FIRST_IMG/1434+0158_I.png) ![c](/4_DataPickle_Generation/FIRST_IMG/1435-0268_I.png)
 
-FR II: ![a](/4_DataPickle_Generation/FIRST_IMG/1408+0050_II.png) ![b](/4_DataPickle_Generation/FIRST_IMG/1408+0281_II.png) ![c](/4_DataPickle_Generation/FIRST_IMG/1409-0307_II.png) ![d](/4_DataPickle_Generation/FIRST_IMG/1412-0075_II.png)
+FR II: ![a](/4_DataPickle_Generation/FIRST_IMG/1408+0050_II.png) ![b](/4_DataPickle_Generation/FIRST_IMG/1408+0281_II.png) ![c](/4_DataPickle_Generation/FIRST_IMG/1409-0307_II.png)
 
 ## Using the Dataset in PyTorch
 
@@ -83,4 +83,4 @@ testset = FRDEEPv2(root="This is the directory saving FRDEEP v2 data", train=Fal
  
 ### Jupyter Notebooks
 
-As said, an example of classification using the FIRST images in FRDEEP v2 via PyTorch is provided as a Jupyter notebook names FRDEEPv2_tutorial.ipynb. These are examples for demonstration only. If you use them for science directly, we too would be appreciated if you could cite [(1)](#paper). For contact and collaboration, please contact hongming.tang@manchester.ac.uk
+As said, an example of classification using the FIRST images in FRDEEP v2 via PyTorch is provided as a Jupyter notebook names FRDEEPv2_tutorial.ipynb. These are examples for demonstration only. If you use them for science directly, we too would be appreciated if you could cite [(1)](#paper). For contact and collaboration, please contact hongmingt@mail.tsinghua.edu.cn
