@@ -84,3 +84,11 @@ testset = FRDEEPv2(root="This is the directory saving FRDEEP v2 data", train=Fal
 ### Jupyter Notebooks
 
 As said, an example of classification using the FIRST images in FRDEEP v2 via PyTorch is provided as a Jupyter notebook names FRDEEPv2_tutorial.ipynb. These are examples for demonstration only. If you use them for science directly, we too would be appreciated if you could cite [(1)](#paper). For contact and collaboration, please contact hongmingt@mail.tsinghua.edu.cn
+
+### See Also
+
+**MiraBest**: a similar radio galaxy labelled classification dataset created by Fiona Porter. Samples in the dataset came from [Miraghaei and Best 2017](https://academic.oup.com/mnras/article/466/4/4346/2843096?login=false), along with over extended radio sources from the Sloan Digital Sky Survey.
+              Earlier ver. [MiraBest](https://github.com/fmporter/MiraBest)
+              Latest ver.  [MiraBest-full](https://github.com/fmporter/MiraBest-full)
+              
+    
