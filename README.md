@@ -36,9 +36,9 @@ This is an *imbalanced dataset*
 
 NVSS set images look like:
 
-FR I: ![a](/4_DataPickle_Generation/NVSS_IMG/1433-0239_I.png) ![b](/4_DataPickle_Generation/NVSS_IMG/1434+0158_I.png) ![c](/4_DataPickle_Generation/NVSS_IMG/1435-0268_I.png) ![d](/4_DataPickle_Generation/NVSS_IMG/1437-0025_I.png)
+FR I: ![a](/4_DataPickle_Generation/NVSS_IMG/1433-0239_I.png) ![b](/4_DataPickle_Generation/NVSS_IMG/1434+0158_I.png) ![c](/4_DataPickle_Generation/NVSS_IMG/1435-0268_I.png)
 
-FR II: ![a](/4_DataPickle_Generation/NVSS_IMG/1408+0050_II.png) ![b](/4_DataPickle_Generation/NVSS_IMG/1408+0281_II.png) ![c](/4_DataPickle_Generation/NVSS_IMG/1409-0307_II.png) ![d](/4_DataPickle_Generation/NVSS_IMG/1412-0075_II.png)
+FR II: ![a](/4_DataPickle_Generation/NVSS_IMG/1408+0050_II.png) ![b](/4_DataPickle_Generation/NVSS_IMG/1408+0281_II.png) ![c](/4_DataPickle_Generation/NVSS_IMG/1409-0307_II.png)
 
 FIRST set images, on the other hand, look like:
 
